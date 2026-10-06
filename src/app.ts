@@ -1,6 +1,8 @@
-import { initializeMap, renderTrack } from "./map";
-import { renderElevationProfile } from "./elevation";
-import type { TrackPoint } from "./types";
+import "leaflet/dist/leaflet.css";
+import { Store } from "./store";
+import { MapView } from "./components/map-view";
+import { ElevationView } from "./components/elevation-view";
+import type { TrackPoint, AppState } from "./types";
 
 declare const track: TrackPoint[];
 
@@ -14,7 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  const mapInstance = initializeMap("map", track[0]);
-  renderTrack(mapInstance, track);
-  renderElevationProfile("elevation-container", track);
+  const store = new Store<AppState>({ activePoint: null });
+
+  new MapView("map", track, store);
+  new ElevationView("elevation-container", track, store);
 });

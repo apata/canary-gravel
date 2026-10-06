@@ -8,3 +8,7 @@ export interface TrackPoint {
   xGlobal: number;
   elevSmooth: number;
 }
+
+export interface AppState {
+  activePoint: TrackPoint | null;
+}

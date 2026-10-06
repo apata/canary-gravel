@@ -1,14 +1,22 @@
+html,
 body {
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 
 #map {
   height: calc(100vh - 150px);
   width: 100vw;
+  position: relative; /* Prevents tile container overflow */
+}
+
+/* Fixes any image resets in global styles */
+.leaflet-container img {
+  max-width: none !important;
+  max-height: none !important;
 }
 
 #elevation-container {
