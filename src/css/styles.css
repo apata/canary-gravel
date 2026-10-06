@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+#map {
+  height: calc(100vh - 150px);
+  width: 100vw;
+}
+
+#elevation-container {
+  height: 150px;
+  width: 100vw;
+  background: #f8f9fa;
+  border-top: 2px solid #ccc;
+  position: relative;
+}
+
+.legend {
+  position: absolute;
+  bottom: 180px;
+  left: 30px;
+  background: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-family: sans-serif;
+  z-index: 1000;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.legend-color {
+  font-weight: bold;
+}
+
+.legend-paved {
+  color: blue;
+}
+
+.legend-unpaved {
+  color: #8b4513;
+}
